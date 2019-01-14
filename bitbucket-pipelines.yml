@@ -1,0 +1,9 @@
+image: composer:latest
+pipelines:
+  default:
+    - step:
+        caches:
+          - composer
+        script:
+          - composer install
+          - vendor/bin/phpunit

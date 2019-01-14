@@ -1,0 +1,32 @@
+{
+  "name": "feedodev/argumentbuilderlib",
+  "description": "Abstract argument builder library",
+  "type": "library",
+  "license": "proprietary",
+  "support": {
+    "issues": "https://bitbucket.org/feedodev/argumentbuilderlib/issues",
+    "source": "https://bitbucket.org/feedodev/argumentbuilderlib"
+  },
+  "require": {
+    "php":"^7"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7.2"
+  },
+  "config": {
+    "vendor-dir": "vendor"
+  },
+  "autoload": {
+    "psr-4": {
+      "Feedo\\AbstractArgumentBuilder\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Feedo\\AbstractArgumentBuilder\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "phpunit"
+  }
+}
