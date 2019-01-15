@@ -1,5 +1,5 @@
 {
-  "name": "feedodev/php-argument-builder",
+  "name": "MyMedia/php-argument-builder",
   "description": "Abstract argument builder library",
   "type": "library",
   "license": "MIT",
@@ -14,7 +14,7 @@
     {"packagist.org": false}
   ],
   "require": {
-    "php":"^7",
+    "php":"^7.2",
     "org/pkg1": "^1.0",
     "org/pkg2": "dev-master"
   },
