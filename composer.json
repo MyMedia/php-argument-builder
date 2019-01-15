@@ -1,14 +1,22 @@
 {
-  "name": "feedodev/argumentbuilderlib",
+  "name": "feedodev/php-argument-builder",
   "description": "Abstract argument builder library",
   "type": "library",
-  "license": "proprietary",
-  "support": {
-    "issues": "https://bitbucket.org/feedodev/argumentbuilderlib/issues",
-    "source": "https://bitbucket.org/feedodev/argumentbuilderlib"
-  },
+  "license": "MIT",
+  "authors":  [
+    {
+      "name": "Denis Voytyuk",
+      "email": "ask@artprima.cz"
+    }
+  ],
+  "repositories": [
+    {"type": "composer", "url": "https://repo.packagist.com/org/"},
+    {"packagist.org": false}
+  ],
   "require": {
-    "php":"^7"
+    "php":"^7",
+    "org/pkg1": "^1.0",
+    "org/pkg2": "dev-master"
   },
   "require-dev": {
     "phpunit/phpunit": "^7.2"

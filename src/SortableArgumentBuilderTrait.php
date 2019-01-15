@@ -7,7 +7,7 @@ namespace Feedo\AbstractArgumentBuilder;
 /**
  * Class SortableArgumentBuilderTrait.
  *
- * @author Denis Voytyuk <denis.voytyuk@feedo.cz>
+ * @author Denis Voytyuk <ask@artprima.cz>
  */
 trait SortableArgumentBuilderTrait
 {

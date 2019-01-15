@@ -11,15 +11,15 @@ use Feedo\AbstractArgumentBuilder\Validator\TypeValidatorInterface;
 /**
  * Class AbstractArgumentBuilder.
  *
- * @author Denis Voytyuk <denis.voytyuk@feedo.cz>
+ * @author Denis Voytyuk <ask@artprima.cz>
  */
 abstract class AbstractArgumentBuilder implements ArgumentBuilderInterface
 {
-    const ARGUMENT_TYPE_MIXED = 0;
-    const ARGUMENT_TYPE_ARGUMENT_BUILDER = 1;
-    const ARGUMENT_TYPE_NUMERIC = 2;
-    const ARGUMENT_TYPE_ENUM = 3;
-    const ARGUMENT_TYPE_BOOLEAN = 4;
+    public const ARGUMENT_TYPE_MIXED = 0;
+    public const ARGUMENT_TYPE_ARGUMENT_BUILDER = 1;
+    public const ARGUMENT_TYPE_NUMERIC = 2;
+    public const ARGUMENT_TYPE_ENUM = 3;
+    public const ARGUMENT_TYPE_BOOLEAN = 4;
 
     protected $args = array();
 

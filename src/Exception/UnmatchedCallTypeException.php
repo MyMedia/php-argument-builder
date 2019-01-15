@@ -7,7 +7,7 @@ namespace Feedo\AbstractArgumentBuilder\Exception;
 /**
  * Class UnmatchedCallTypeException.
  *
- * @author ${FileAuthor} <${FileAuthorEmail}>
+ * @author Denis Voytyuk <ask@artprima.cz>
  */
 class UnmatchedCallTypeException extends \RuntimeException
 {

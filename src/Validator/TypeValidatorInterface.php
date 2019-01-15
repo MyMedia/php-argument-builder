@@ -7,7 +7,7 @@ namespace Feedo\AbstractArgumentBuilder\Validator;
 /**
  * Class TypeValidatorInterface.
  *
- * @author Denis Voytyuk <denis.voytyuk@feedo.cz>
+ * @author Denis Voytyuk <ask@artprima.cz>
  */
 interface TypeValidatorInterface
 {

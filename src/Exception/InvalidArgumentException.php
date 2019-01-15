@@ -7,7 +7,7 @@ namespace Feedo\AbstractArgumentBuilder\Exception;
 /**
  * Class InvalidArgumentException.
  *
- * @author Denis Voytyuk <denis.voytyuk@feedo.cz>
+ * @author Denis Voytyuk <ask@artprima.cz>
  */
 class InvalidArgumentException extends \InvalidArgumentException
 {

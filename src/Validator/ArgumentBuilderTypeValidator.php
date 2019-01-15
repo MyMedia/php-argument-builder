@@ -9,7 +9,7 @@ use Feedo\AbstractArgumentBuilder\Exception;
 /**
  * Class ArgumentBuilderTypeValidator.
  *
- * @author Denis Voytyuk <denis.voytyuk@feedo.cz>
+ * @author Denis Voytyuk <ask@artprima.cz>
  */
 class ArgumentBuilderTypeValidator implements TypeValidatorInterface
 {

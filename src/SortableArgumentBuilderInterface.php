@@ -7,7 +7,7 @@ namespace Feedo\AbstractArgumentBuilder;
 /**
  * Class SortableArgumentBuilderInterface.
  *
- * @author Denis Voytyuk <denis.voytyuk@feedo.cz>
+ * @author Denis Voytyuk <ask@artprima.cz>
  */
 interface SortableArgumentBuilderInterface
 {

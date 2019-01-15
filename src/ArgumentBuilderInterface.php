@@ -7,7 +7,7 @@ namespace Feedo\AbstractArgumentBuilder;
 /**
  * Interface ArgumentBuilderInterface.
  *
- * @author Denis Voytyuk <denis.voytyuk@feedo.cz>
+ * @author Denis Voytyuk <ask@artprima.cz>
  */
 interface ArgumentBuilderInterface
 {
