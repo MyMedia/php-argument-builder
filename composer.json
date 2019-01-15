@@ -9,10 +9,6 @@
       "email": "ask@artprima.cz"
     }
   ],
-  "repositories": [
-    {"type": "composer", "url": "https://repo.packagist.com/org/"},
-    {"packagist.org": false}
-  ],
   "require": {
     "php":"^7.2",
     "org/pkg1": "^1.0",
