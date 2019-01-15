@@ -1,5 +1,5 @@
 {
-  "name": "MyMedia/php-argument-builder",
+  "name": "mymedia/php-argument-builder",
   "description": "Abstract argument builder library",
   "type": "library",
   "license": "MIT",
