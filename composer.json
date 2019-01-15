@@ -10,9 +10,7 @@
     }
   ],
   "require": {
-    "php":"^7.2",
-    "org/pkg1": "^1.0",
-    "org/pkg2": "dev-master"
+    "php":"^7.2"
   },
   "require-dev": {
     "phpunit/phpunit": "^7.2"
