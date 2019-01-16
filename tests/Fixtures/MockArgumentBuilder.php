@@ -6,20 +6,20 @@ use Feedo\AbstractArgumentBuilder\AbstractArgumentBuilder;
 
 /**
  * @method $this getArg1()
- * @method       setArg1($value)
- * @method $this unsetArg1($value)
+ * @method       setArg1($value, $_ = null)
+ * @method $this unsetArg1()
  * @method       getArg2()
- * @method $this setArg2($value)
- * @method       unsetArg2($value)
+ * @method $this setArg2($value, $_ = null)
+ * @method       unsetArg2()
  * @method $this getSub1()
- * @method       setSub1($value)
- * @method       unsetSub1($value)
+ * @method       setSub1($value, $_ = null)
+ * @method       unsetSub1()
  * @method $this getSub2()
  * @method       setSub2($value, $_ = null)
- * @method       unsetSub2($value)
+ * @method       unsetSub2()
  * @method $this getEnum()
  * @method       setEnum($value)
- * @method       unsetEnum($value)
+ * @method       unsetEnum()
  */
 class MockArgumentBuilder extends AbstractArgumentBuilder
 {
