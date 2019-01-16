@@ -165,6 +165,7 @@ abstract class AbstractArgumentBuilder implements ArgumentBuilderInterface
             try {
                 return $this->{$method}($name, $arguments);
             } catch (Exception\UnmatchedCallTypeException $e) {
+                // continue cycle
             }
         }
 
