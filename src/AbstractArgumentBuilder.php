@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Feedo\AbstractArgumentBuilder;
 
-use Feedo\AbstractArgumentBuilder\Exception;
 use Feedo\AbstractArgumentBuilder\Validator\ArgumentBuilderTypeValidator;
 use Feedo\AbstractArgumentBuilder\Validator\TypeValidatorInterface;
 
@@ -235,7 +234,7 @@ abstract class AbstractArgumentBuilder implements ArgumentBuilderInterface
         }
 
         $field = $matches[1];
-        if ($field[0] !== '-') {
+        if ('-' !== $field[0]) {
             $field = lcfirst($matches[1]);
         }
         $field = $this->camelCaseToSnakeCase($field);
@@ -288,7 +287,7 @@ abstract class AbstractArgumentBuilder implements ArgumentBuilderInterface
         }
 
         $field = $matches[1];
-        if ($field[0] !== '-') {
+        if ('-' !== $field[0]) {
             $field = lcfirst($matches[1]);
         }
         $field = $this->camelCaseToSnakeCase($field);
