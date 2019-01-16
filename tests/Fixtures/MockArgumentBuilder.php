@@ -4,6 +4,23 @@ namespace Feedo\AbstractArgumentBuilder\Tests\Fixtures;
 
 use Feedo\AbstractArgumentBuilder\AbstractArgumentBuilder;
 
+/**
+ * @method $this getArg1()
+ * @method       setArg1($value)
+ * @method $this unsetArg1($value)
+ * @method       getArg2()
+ * @method $this setArg2($value)
+ * @method       unsetArg2($value)
+ * @method $this getSub1()
+ * @method       setSub1($value)
+ * @method       unsetSub1($value)
+ * @method $this getSub2()
+ * @method       setSub2($value, $_ = null)
+ * @method       unsetSub2($value)
+ * @method $this getEnum()
+ * @method       setEnum($value)
+ * @method       unsetEnum($value)
+ */
 class MockArgumentBuilder extends AbstractArgumentBuilder
 {
     protected function load()
