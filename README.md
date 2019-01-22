@@ -28,13 +28,44 @@ $ composer require mymedia/php-argument-builder
 
 ## Basic example
 
-* Controller:
+* Argument Builder:
 
 ```php
-Something php
-```
+<?php
 
-## Advanced example
+declare(strict_types=1);
+
+namespace CustomArgumentBuilder;
+
+use Feedo\AbstractArgumentBuilder\AbstractArgumentBuilder;
+
+/**
+ * Class CustomArgumentBuilder.
+ *
+ * @author Author <author@example.com>
+ *
+ * @method       getArg1()
+ * @method $this setArg1($value)
+ * @method       getArg2()
+ * @method $this setArg2($value)
+ * @method       getArg3()
+ * @method $this setArg3(string $value, $_ = null)
+ */
+class BrandArgumentBuilder extends AbstractArgumentBuilder
+{
+    protected function load()
+    {
+        $this->fields = array(
+            'arg1' => self::ARGUMENT_TYPE_NUMERIC,
+            'arg2' => self::ARGUMENT_TYPE_MIXED,
+            'arg3' => array(
+                'subArg1' => self::ARGUMENT_TYPE_ENUM,
+                'subArg2' => self::ARGUMENT_TYPE_BOOLEAN,
+            ),
+        );
+    }
+}
+```
 
 # Code license
 
