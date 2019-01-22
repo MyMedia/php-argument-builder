@@ -14,7 +14,7 @@
 Argument Builder Library
 ===================
 
-AbstractArgumentBuilder class is used in php applications to create custom ArgumentBuilders. 
+AbstractArgumentBuilder class is used to build a query string from pre-defined validatable parameters. It can also be used to the reverse so that the application uses only the desired validated parameters.
 Generates its own property getters and setters and unset via automated magic function.
 
 # Installation
@@ -27,76 +27,91 @@ $ composer require mymedia/php-argument-builder
 
 # Usage examples
 
-## Basic example
+## Basic usage
 
-* Argument Builder:
+### AbstractArgumentBuilder
+
+AbstractArgumentBuilder implements ArgumentBuilderInterface which provides only one method: build(). Magic function __call() provides access to getters and setters, and unset, without the need to generate them manually. It also provides us with __toString() function that returns http query string.
 
 ```php
-<?php
+$builder
+    ->setSearch('foobar')
+    ->setFilter('color', 'iridescent')
+    ->setFilter('size', 'height', 2)
+    ->setFilter('size', 'width', 10);
+```
 
-declare(strict_types=1);
+Using the provided functionality, the presented code will generate query arguments like: `http://example.com/?search=foobar&filter[color]=iridescent&filter[size][height]=2&filter[size][width]=10.` However this requires additional classes to extend the `AbstractArgumentBuilder` that we will define in the next section.
 
-namespace App\CustomArgumentBuilder;
+### Extending AbstractArgumentBuilder
 
-use Feedo\ArgumentBuilder\AbstractArgumentBuilder;
+#### Argument Types
 
-/**
- * Class CustomArgumentBuilder.
- *
- * @author Author <author@example.com>
- *
- * @method       getArg1()
- * @method $this setArg1($value)
- * @method       getArg2()
- * @method $this setArg2($value)
- * @method       getArg3()
- * @method $this setArg3(string $value, $_ = null)
- */
-class CustomArgumentBuilder extends AbstractArgumentBuilder
+`AbstractArgumentBuilder` defines following constants, that are used in field validation:
+ 
+```php
+    const ARGUMENT_TYPE_MIXED = 0;
+    const ARGUMENT_TYPE_ARGUMENT_BUILDER = 1;
+    const ARGUMENT_TYPE_NUMERIC = 2;
+    const ARGUMENT_TYPE_ENUM = 3;
+    const ARGUMENT_TYPE_BOOLEAN = 4;
+```
+
+#### Classes
+
+```php
+class SearchArgumentBuilder extends AbstractArgumentBuilder
 {
-    protected function load()
-    {
-        $this->fields = array(
-            'arg1' => self::ARGUMENT_TYPE_NUMERIC,
-            'arg2' => self::ARGUMENT_TYPE_MIXED,
-            'arg3' => array(
-                'subArg1' => self::ARGUMENT_TYPE_ENUM,
-                'subArg2' => self::ARGUMENT_TYPE_BOOLEAN,
-            ),
-        );
-    }
+    protected $fields = [
+        'search' => self::ARGUMENT_TYPE_MIXED,
+        'filter' => SearchFilterArgumentBuilder::class,
+    ];
 }
 ```
 
 ```php
-<?php
-
-declare(strict_types=1);
-
-namespace App\CustomArgumentBuilder;
-
-class ArgumentBuilderHelper
+class SearchFilterArgumentBuilder extends AbstractArgumentBuilder
 {
-    public function setCustomBuilderData(array $data): CustomArgumentBuilder
+    protected $fields = [
+        'color' => self::ARGUMENT_TYPE_MIXED,
+        'size' => SearchFilterSizeArgumentConverter::class, 
+    ];
+}
+```
+
+```php
+class SearchFilterSizeArgumentBuilder extends AbstractArgumentBuilder
+{
+    protected $fields = [
+        'height' => self::ARGUMENT_TYPE_MIXED,
+        'width' => self::ARGUMENT_TYPE_MIXED,
+    ];
+}
+```
+
+### Field Validation
+
+A simple way to provide field validation, it will fail if the defined condition is not met:
+
+```php
+class SearchFilterPriceArgumentBuilder extends AbstractArgumentBuilder
+{
+    protected function load()
     {
-        $builder = new CustomArgumentBuilder();
-        
-        $builder
-            ->setArg1($data['arg1'])
-            ->setArg2($data['arg2'])
-            ->setArg3('subArg1', $data['arg3']->getSubArg1())
-            ->setArg3('subArg2', $data['arg3']->getSubarg2());
-        
-        return $builder;
-    }
-    
-    public function unsetCustomBuilderArguments(CustomArgumentBuilder $builder): CustomArgumentBuilder
-    {
-        $builder->unsetArg1();
-        $builder->unsetArg2();
-        $builder->unsetArg3('subArg1');
-        
-        return $builder;
+        $this->fields = array(
+            'min' => array(
+                'type' => self::ARGUMENT_TYPE_MIXED,
+                'validator' => function ($value) {
+                    return $value >= 0 && $value <= 1000;
+                }
+            ),
+            'max' => array(
+                'type' => self::ARGUMENT_TYPE_MIXED,
+                'validator' => function ($value) {
+                    return $value >= 0 && $value <= 1000;
+                }
+            ),
+        );
     }
 }
 ```
