@@ -20,12 +20,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Feedo\\AbstractArgumentBuilder\\": "src/"
+      "Feedo\\ArgumentBuilder\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Feedo\\AbstractArgumentBuilder\\Tests\\": "tests/"
+      "Feedo\\ArgumentBuilder\\Tests\\": "tests/"
     }
   },
   "scripts": {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Feedo\ArgumentBuilder\Tests\Request;
+namespace Feedo\ArgumentBuilder\Tests\Unit;
 
 use Feedo\ArgumentBuilder\Exception\InvalidArgumentException;
 use Feedo\ArgumentBuilder\Exception\InvalidDefinitionException;
