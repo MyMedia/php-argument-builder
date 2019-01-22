@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Feedo\AbstractArgumentBuilder\Exception;
+namespace Feedo\ArgumentBuilder\Exception;
 
 /**
  * Class InvalidArgumentException.

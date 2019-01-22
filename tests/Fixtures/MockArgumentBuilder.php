@@ -1,8 +1,8 @@
 <?php
 
-namespace Feedo\AbstractArgumentBuilder\Tests\Fixtures;
+namespace Feedo\ArgumentBuilder\Tests\Fixtures;
 
-use Feedo\AbstractArgumentBuilder\AbstractArgumentBuilder;
+use Feedo\ArgumentBuilder\AbstractArgumentBuilder;
 
 /**
  * @method $this getArg1()

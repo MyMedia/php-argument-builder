@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Feedo\AbstractArgumentBuilder\Validator;
+namespace Feedo\ArgumentBuilder\Validator;
 
-use Feedo\AbstractArgumentBuilder\Exception;
+use Feedo\ArgumentBuilder\Exception;
 
 /**
  * Class ArgumentBuilderTypeValidator.

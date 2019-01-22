@@ -14,7 +14,8 @@
 Argument Builder Library
 ===================
 
-AbstractArgumentBuilder class used in php application to create custom ArgumentBuilders o various types.
+AbstractArgumentBuilder class is used in php applications to create custom ArgumentBuilders. 
+Generates its own property getters and setters and unset via automated magic function.
 
 # Installation
 
@@ -35,9 +36,9 @@ $ composer require mymedia/php-argument-builder
 
 declare(strict_types=1);
 
-namespace CustomArgumentBuilder;
+namespace App\CustomArgumentBuilder;
 
-use Feedo\AbstractArgumentBuilder\AbstractArgumentBuilder;
+use Feedo\ArgumentBuilder\AbstractArgumentBuilder;
 
 /**
  * Class CustomArgumentBuilder.
@@ -51,7 +52,7 @@ use Feedo\AbstractArgumentBuilder\AbstractArgumentBuilder;
  * @method       getArg3()
  * @method $this setArg3(string $value, $_ = null)
  */
-class BrandArgumentBuilder extends AbstractArgumentBuilder
+class CustomArgumentBuilder extends AbstractArgumentBuilder
 {
     protected function load()
     {
@@ -63,6 +64,39 @@ class BrandArgumentBuilder extends AbstractArgumentBuilder
                 'subArg2' => self::ARGUMENT_TYPE_BOOLEAN,
             ),
         );
+    }
+}
+```
+
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace App\CustomArgumentBuilder;
+
+class ArgumentBuilderHelper
+{
+    public function setCustomBuilderData(array $data): CustomArgumentBuilder
+    {
+        $builder = new CustomArgumentBuilder();
+        
+        $builder
+            ->setArg1($data['arg1'])
+            ->setArg2($data['arg2'])
+            ->setArg3('subArg1', $data['arg3']->getSubArg1())
+            ->setArg3('subArg2', $data['arg3']->getSubarg2());
+        
+        return $builder;
+    }
+    
+    public function unsetCustomBuilderArguments(CustomArgumentBuilder $builder): CustomArgumentBuilder
+    {
+        $builder->unsetArg1();
+        $builder->unsetArg2();
+        $builder->unsetArg3('subArg1');
+        
+        return $builder;
     }
 }
 ```

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Feedo\AbstractArgumentBuilder;
+namespace Feedo\ArgumentBuilder;
 
-use Feedo\AbstractArgumentBuilder\Validator\ArgumentBuilderTypeValidator;
-use Feedo\AbstractArgumentBuilder\Validator\TypeValidatorInterface;
+use Feedo\ArgumentBuilder\Validator\ArgumentBuilderTypeValidator;
+use Feedo\ArgumentBuilder\Validator\TypeValidatorInterface;
 
 /**
  * Class AbstractArgumentBuilder.

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Feedo\AbstractArgumentBuilder;
+namespace Feedo\ArgumentBuilder;
 
 /**
  * Interface ArgumentBuilderInterface.

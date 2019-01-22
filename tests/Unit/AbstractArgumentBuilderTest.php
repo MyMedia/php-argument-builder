@@ -1,14 +1,14 @@
 <?php
 
-namespace Feedo\AbstractArgumentBuilder\Tests\Request;
+namespace Feedo\ArgumentBuilder\Tests\Request;
 
-use Feedo\AbstractArgumentBuilder\Exception\InvalidArgumentException;
-use Feedo\AbstractArgumentBuilder\Exception\InvalidDefinitionException;
-use Feedo\AbstractArgumentBuilder\Exception\UndefinedMethodException;
-use Feedo\AbstractArgumentBuilder\AbstractArgumentBuilder;
-use Feedo\AbstractArgumentBuilder\Tests\Fixtures\CustomMockArgumentBuilder;
-use Feedo\AbstractArgumentBuilder\Tests\Fixtures\MockArgumentBuilder;
-use Feedo\AbstractArgumentBuilder\Tests\Fixtures\SubMockArgumentBuilder;
+use Feedo\ArgumentBuilder\Exception\InvalidArgumentException;
+use Feedo\ArgumentBuilder\Exception\InvalidDefinitionException;
+use Feedo\ArgumentBuilder\Exception\UndefinedMethodException;
+use Feedo\ArgumentBuilder\AbstractArgumentBuilder;
+use Feedo\ArgumentBuilder\Tests\Fixtures\CustomMockArgumentBuilder;
+use Feedo\ArgumentBuilder\Tests\Fixtures\MockArgumentBuilder;
+use Feedo\ArgumentBuilder\Tests\Fixtures\SubMockArgumentBuilder;
 use PHPUnit\Framework\TestCase;
 
 class AbstractArgumentBuilderTest extends TestCase
